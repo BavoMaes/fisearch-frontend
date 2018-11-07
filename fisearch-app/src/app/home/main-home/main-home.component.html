@@ -5,12 +5,13 @@
     <input type="text" name="author" value="" placeholder="Auteur...">
     <select name="departement">
       <option selected="selected">Alle departementen</option>
-      <option value="DT">Design & Technologie</option>
+      <option *ngFor="let department of departments" value="{{ department }}">{{ department }}</option>
+      <!-- <option value="DT">Design & Technologie</option>
       <option value="Gezondheid">Gezondheidszorg - Landschapsarchitectuur</option>
       <option value="Conservatorium">Koninklijk Conservatorium Brussel - School of Arts</option>
       <option value="MMM">Management, Media & Maatschappij</option>
       <option value="Onderwijs">Onderwijs & Pedagogie</option>
-      <option value="RITCS">RITCS - School of Arts</option>
+      <option value="RITCS">RITCS - School of Arts</option> -->
     </select>
     <button type="submit">Zoeken</button>
     <a class="more-filters">Meer filters...</a>

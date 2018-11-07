@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainHomeComponent } from './main-home/main-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   declarations: [MainHomeComponent]
 })
