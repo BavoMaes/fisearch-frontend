@@ -1,0 +1,80 @@
+.center{
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+.center h1 {
+    margin: 0 0 30px 0;
+    font-size: 35px;
+    padding: 0;
+}
+
+.center form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+}
+
+.center input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e6e6e6;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.center input::placeholder {
+    color: #c6c6c6;
+}
+
+.center input[type=text] {  
+    margin: 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.center input[type=password] {  
+    margin: 0 0 30px 0;
+    border-radius: 0 0 6px 6px;
+    position: relative;
+    top: -0.5px;
+}
+
+.center .remember {
+    width: 100%;
+    align-self: flex-start;
+    margin: 0 0 30px 0;
+}
+
+.center .remember input[type=checkbox] {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 5%;
+    margin: 0 5px 0 0;
+    position: relative;
+    top: -1px;
+}
+
+.remember label {
+    display: inline-block;
+    color: #c6c6c6;
+}
+
+.center button {
+    width: 100%;
+    background-color: #e30f21;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    padding: 7.5px 0;
+    margin: 0 0 30px 0;
+}
+
+.login-error p {
+    color: #e30f21;
+}
