@@ -1,7 +1,9 @@
 <nav>
   <div class="container">
     <div class="logo">
-      <img src="./assets/img/FiSearch_logo.png">
+      <a routerLink='/' routerLinkActive="active">
+        <img src="./assets/img/FiSearch_logo.png">
+      </a>
     </div>
     <div class="searchbar">
       <form>
@@ -12,7 +14,7 @@
       </form>
     </div>
     <div class="buttons">
-      <button class="upload">Upload</button>
+      <button routerLink="/upload" class="upload">Upload</button>
       <button class="logout"></button>
     </div>
   </div>

@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainLoginComponent } from './main-login/main-login.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [MainLoginComponent],
-  exports: [MainLoginComponent]
+  entryComponents: [MainLoginComponent]
 })
 export class LoginModule { }

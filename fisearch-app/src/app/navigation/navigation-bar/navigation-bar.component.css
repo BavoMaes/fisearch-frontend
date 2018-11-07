@@ -5,9 +5,13 @@ nav {
     width: 100%;
 }
 
+nav .logo a {
+    display: block;
+    float: left;
+}
+
 nav .logo img {
     height: 35px;
-    float: left;
 }
 
 nav .searchbar {
