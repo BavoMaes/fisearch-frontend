@@ -12,6 +12,7 @@ nav .logo a {
 
 nav .logo img {
     height: 35px;
+    display: block;
 }
 
 nav .searchbar {
@@ -54,6 +55,7 @@ nav .searchbar img {
 }
 
 nav .buttons {
+    align-content: flex-end;
 }
 
 nav .buttons button {
@@ -62,6 +64,7 @@ nav .buttons button {
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(228, 54, 69, 0.1);
     height: 40px;
+    outline: none;
 }
 
 nav .buttons button:hover {
