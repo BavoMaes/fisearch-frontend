@@ -1,0 +1,56 @@
+.filters {
+    margin: 0;
+    width: 250px;
+    border-right: 1px solid #e6e6e6;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+}
+
+.clear-filters {
+    min-width: 250px;
+    height: 100%;
+}
+
+.results {
+    width: 100%;
+    padding: 25px 0 0 50px;
+    box-sizing: border-box;   
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.info {
+    margin-left: 25px;
+}
+
+.result img {
+    justify-self: flex-start;
+    border-radius: 6px;
+}
+
+.info {
+}
+
+.info h2 {
+    margin: 0;
+}
+
+.info .author {
+    margin: 0 0 0 0;
+}
+
+.description {
+    max-height: 100px;
+    overflow: hidden;
+
+}

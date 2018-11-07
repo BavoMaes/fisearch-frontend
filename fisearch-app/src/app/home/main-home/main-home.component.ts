@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-home',
@@ -11,7 +12,7 @@ export class MainHomeComponent implements OnInit {
   departmentsUrl = 'http://localhost:8888/fisearch/public/api/departments';
   departments;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.getDepartments();
@@ -20,7 +21,6 @@ export class MainHomeComponent implements OnInit {
   getDepartments() {
     this.http.get(this.departmentsUrl).subscribe((data) =>{
       this.departments = data['departments'];
-      console.log(this.departments);
     }, error => {
       console.log(error);
     });

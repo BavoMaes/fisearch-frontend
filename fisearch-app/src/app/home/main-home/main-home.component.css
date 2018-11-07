@@ -4,17 +4,20 @@
   height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
-  justify-content: center; /*centers items on the line (the x-axis by default)*/
-  align-items: center; /*centers items on the cross-axis (y by default)*/
+  justify-content: center;
+  align-items: center;
+}
+
+.ehb-logo {
+    height: 75px;
 }
 
 .search-options {
     box-sizing: border-box;
     background-color: #fff;
-    width: 700px;
-    /* box-shadow: 0 16px 16px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15); */
-    padding: 40px 30px;
+    width: 620px;
     border-radius: 6px;
+    margin-top: 10px;
 }
 
 .search-options input[type=search] {
