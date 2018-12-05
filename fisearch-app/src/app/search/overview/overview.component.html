@@ -4,7 +4,8 @@
   </div>
   <div class="clear-filters"></div>
   <div class="results">
-    <div>
+    <h1 *ngIf="loaded == true">Zoekresultaten voor "{{ searchterms }}" <span *ngIf="loaded == true && results.length != 0">({{ results.length }})</span></h1>
+    <div *ngIf="loaded == true && results.length != 0">
       <div *ngFor="let result of results" class="result">
         <img class="thumbnail" src="https://via.placeholder.com/141x200/e6e6e6/.jpg">
         <div class="info">
@@ -14,5 +15,7 @@
         </div>
       </div>
     </div>
+    <p *ngIf="loaded == true && results.length == 0">Er zijn geen resultaten teruggevonden.</p>
+    <img *ngIf="loaded == false" class="loading-animation" src="./assets/img/tail-spin.svg">
   </div>
 </div>

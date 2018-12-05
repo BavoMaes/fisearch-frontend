@@ -11,7 +11,8 @@ export class OverviewComponent implements OnInit {
 
   searchterms = "";
   finalWorksUrl = "http://localhost:8888/fisearch/public/api/works/by_title/";
-  results;
+  results = null;
+  loaded = false;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
@@ -20,6 +21,7 @@ export class OverviewComponent implements OnInit {
       if (params['q'] == null || params['q'] == "") {
         console.log("Nothing searched...");
       } else {
+        this.searchterms = params['q'];
         this.getFinalWorks(params['q']);
       }
     });
@@ -28,6 +30,8 @@ export class OverviewComponent implements OnInit {
   getFinalWorks(searchterms) {
     this.http.get(this.finalWorksUrl + searchterms).subscribe(data => {
       this.results = data;
+      this.loaded = true;
+      //console.log(this.results);
     })
   }
 

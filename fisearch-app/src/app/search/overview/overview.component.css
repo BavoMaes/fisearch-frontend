@@ -51,5 +51,9 @@
 .description {
     max-height: 100px;
     overflow: hidden;
+}
 
+.loading-animation {
+    display: block;
+    margin: 50px auto;
 }
