@@ -38,11 +38,10 @@
     border-radius: 6px;
 }
 
-.info {
-}
-
 .info h2 {
     margin: 0;
+    max-height: 75px;
+    overflow: hidden;
 }
 
 .info .author {
