@@ -14,8 +14,8 @@
       </form>
     </div> -->
     <div class="buttons">
-      <button routerLink="/upload" routerLinkActive="active" class="upload">Upload</button>
-      <button routerLink="/login" routerLinkActive="active" class="logout"></button>
+      <button *ngIf="this.tokenService.loggedIn()" routerLink="/upload" routerLinkActive="active" class="upload">Upload</button>
+      <button *ngIf="this.tokenService.loggedIn()" (click)="logOut()" routerLinkActive="active" class="logout"></button>
     </div>
   </div>
 </nav>

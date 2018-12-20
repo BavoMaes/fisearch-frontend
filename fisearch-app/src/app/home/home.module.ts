@@ -4,6 +4,7 @@ import { MainHomeComponent } from './main-home/main-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TokenService } from '../token.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     FormsModule
   ],
-  declarations: [MainHomeComponent]
+  declarations: [MainHomeComponent],
+  providers: [TokenService]
 })
 export class HomeModule { }

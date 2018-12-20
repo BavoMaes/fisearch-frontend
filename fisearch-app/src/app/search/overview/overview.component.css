@@ -7,6 +7,71 @@
     top: 80px;
 }
 
+.filters form {
+    width: 210px;
+    display: block;
+}
+
+.filters input {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filters input::placeholder {
+    color: #c6c6c6;
+}
+
+.filters input:focus {
+    border-color: #bfbfbf !important;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
+}
+
+.filters select {
+    background: transparent;
+    border: 1px solid #e6e6e6;
+    height: 40px;
+    width: 100%;
+    color: #222;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.filter-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 5px 0;
+}
+
+.filters label {
+    font-size: 14px;
+}
+
+.filter-year {
+    width: 36.5% !important;
+    margin-right: 5px;
+}
+
+.filters button {
+    width: 100%;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #e30f21;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    padding: 7.5px 0;
+}
+
 .clear-filters {
     min-width: 250px;
     height: 100%;
@@ -21,12 +86,34 @@
 .result {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 50px;
     border: 1px solid #e6e6e6;
     border-radius: 6px;
     padding: 25px;
     box-sizing: border-box;
+}
+
+.results button {
+    padding: 10px 0;
+    width: 100px;
+    margin-left: 25px;
+}
+
+.results input[type='search'] {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: calc(100% - 125px);
+    outline: none;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
+}
+
+.results input[type='search']::placeholder {
+    color: #c6c6c6;
 }
 
 .info {
@@ -56,4 +143,8 @@
 .loading-animation {
     display: block;
     margin: 50px auto;
+}
+
+.error {
+    color: red;
 }

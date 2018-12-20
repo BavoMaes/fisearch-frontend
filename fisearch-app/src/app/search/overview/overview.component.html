@@ -1,10 +1,32 @@
 <div class="container">
   <div class="filters">
     <h2>Filters</h2>
+    <form (ngSubmit)="onSubmit()">
+      <p class="filter-title">Departement</p>
+      <select [(ngModel)]="department" name="department">
+        <option value="">Alle departementen</option>
+        <option *ngFor="let department of departments" value="{{ department }}">{{ department }}</option>
+      </select>
+      <p class="filter-title">Auteur</p>
+      <input [(ngModel)]="author" name="author" type="text" value="{{ author }}">
+      <p class="filter-title">Schooljaar</p>
+      <label>van </label><input [(ngModel)]="minYear" name="minYear" class="filter-year" type="number" min="1980" max="{{ currentYear - 1 }}" placeholder="1980">
+      <label>tot </label><input [(ngModel)]="maxYear" name="maxYear" class="filter-year" type="number" min="1981" max="{{ currentYear }}" placeholder="{{ currentYear }}">
+      <p class="filter-title">Studierichting</p>
+      <input type="text" [(ngModel)]="field" name="field">
+      <p class="filter-title">Promotor</p>
+      <input type="text" [(ngModel)]="promotor" name="promotor">
+      <button type="submit">Filters toepassen</button>
+    </form>
   </div>
   <div class="clear-filters"></div>
   <div class="results">
-    <h1 *ngIf="loaded == true">Zoekresultaten voor "{{ searchterms }}" <span *ngIf="loaded == true && results.length != 0">({{ results.length }})</span></h1>
+    <form (ngSubmit)="onSubmit()">
+      <input [(ngModel)]="searchterms" type="search" name="searchterms" value="{{ searchterms }}" placeholder="Zoektermen...">
+      <button type="submit">Zoeken</button>
+    </form>
+    <h1 *ngIf="loaded == true && searched != ''">Zoekresultaten voor "{{ searched }}" <span *ngIf="loaded == true && results.length != 0">({{ results.length }})</span></h1>
+    <h1 *ngIf="loaded == true && searched == ''">Zoekresultaten <span *ngIf="loaded == true && results.length != 0">({{ results.length }})</span></h1>
     <div *ngIf="loaded == true && results.length != 0">
       <div *ngFor="let result of results" class="result">
         <img class="thumbnail" src="https://via.placeholder.com/141x200/e6e6e6/.jpg">
@@ -16,6 +38,10 @@
       </div>
     </div>
     <p *ngIf="loaded == true && results.length == 0">Er zijn geen resultaten teruggevonden.</p>
-    <img *ngIf="loaded == false" class="loading-animation" src="./assets/img/tail-spin.svg">
+    <div *ngIf="error">
+      <p>Er ging iets mis.</p>
+      <p>Wij proberen dit zo snel mogelijk op te lossen!</p>
+    </div>
+    <img *ngIf="loaded == false && error == false" class="loading-animation" src="./assets/img/tail-spin.svg">
   </div>
 </div>

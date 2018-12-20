@@ -4,13 +4,12 @@
   <form (ngSubmit)="onSubmit()">
     <div class="search-options">
       <input [(ngModel)]="searchterms" type="search" name="searchterms" value="" placeholder="Zoektermen...">
-      <input type="text" name="author" value="" placeholder="Auteur...">
-      <select name="departement">
-        <option selected="selected">Alle departementen</option>
+      <input [(ngModel)]="author" type="text" name="author" value="" placeholder="Auteur...">
+      <select [(ngModel)]="department" name="department">
+        <option value="" selected>Alle departementen</option>
         <option *ngFor="let department of departments" value="{{ department }}">{{ department }}</option>
       </select>
       <button type="submit">Zoeken</button>
-      <a class="more-filters">Meer filters...</a>
     </div>
   </form>
 </div>

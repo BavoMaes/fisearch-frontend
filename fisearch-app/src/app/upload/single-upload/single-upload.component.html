@@ -1,3 +1,7 @@
-<p>
-  single-upload works!
-</p>
+<div class="container">
+<label>
+  PDF:
+  <input type="file" multiple (change)="getFiles($event)">
+  <button (click)="uploadFiles()">Upload</button>
+</label>
+</div>

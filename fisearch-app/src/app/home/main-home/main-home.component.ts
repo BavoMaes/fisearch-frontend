@@ -1,7 +1,7 @@
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
+import { TokenService } from 'src/app/token.service';
 
 @Component({
   selector: 'app-main-home',
@@ -13,10 +13,13 @@ export class MainHomeComponent implements OnInit {
   departmentsUrl = 'http://localhost:8888/fisearch/public/api/departments';
   departments;
   searchterms = "";
+  department = "";
+  author;
 
-  constructor(private http: HttpClient, private router: Router, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit() {
+    this.tokenService.checkToken();
     this.getDepartments();
   }
 
@@ -29,8 +32,17 @@ export class MainHomeComponent implements OnInit {
   }
 
   onSubmit() {
-    let searchQuery = '/search?q=' + encodeURI(this.searchterms);
-    this.router.navigateByUrl(searchQuery);
+    this.router.navigateByUrl(this.createUrl());
   }
 
+  createUrl() {
+    let searchQuery = '/search?q=' + encodeURIComponent(this.searchterms);
+    if (this.department != null && this.department != "") {
+      searchQuery = searchQuery + "&department=" + encodeURIComponent(this.department);
+    }
+    if (this.author != null && this.author != "") {
+      searchQuery = searchQuery + "&author=" + encodeURIComponent(this.author);
+    }
+    return searchQuery;
+  }
 }

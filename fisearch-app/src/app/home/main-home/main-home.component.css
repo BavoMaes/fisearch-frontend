@@ -20,41 +20,66 @@
     margin-top: 10px;
 }
 
-.search-options input[type=search] {
-    border: 1.5px solid #e6e6e6;
+.search-options input[type='search'] {
+    border: 1px solid #e6e6e6;
     border-radius: 6px;
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
     outline: none;
     margin-bottom: 25px;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
 }
 
-.search-options input[type=search]::placeholder {
+.search-options input[type='search']::placeholder {
     color: #c6c6c6;
 }
 
-.search-options input[type=text] {
-    border: 1.5px solid #e6e6e6;
+.search-options input[type='text'] {
+    border: 1px solid #e6e6e6;
     border-radius: 6px;
     padding: 10px;
     box-sizing: border-box;
     outline: none;
     margin-right: 25px;
     width: 35%;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
 }
 
-.search-options input[type=text]::placeholder {
+.search-options input[type='text']::placeholder {
     color: #c6c6c6;
+}
+
+.search-options input[type='text']:focus {
+    border-color: #bfbfbf !important;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
+}
+
+.search-options input[type='search']:focus {
+    border-color: #bfbfbf !important;
+    -webkit-transition: border-color 0.2s ease-out;
+    -moz-transition: border-color 0.2s ease-out;
+    -o-transition: border-color 0.2s ease-out;
+     transition: border-color 0.2s ease-out;
 }
 
 .search-options select {
     background: transparent;
-    border: 1.5px solid #e6e6e6;
+    border: 1px solid #e6e6e6;
     height: 47.5px;
     color: #222;
     width: 35%;
     margin-right: 25px;
+    outline: none;
 }
 
 .search-options button {
