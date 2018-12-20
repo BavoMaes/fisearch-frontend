@@ -70,6 +70,22 @@ button {
     border: none;
     color: #fff;
     padding: 7.5px 0;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(228, 54, 69, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-out;
+    -moz-transition: box-shadow 0.2s ease-out;
+    -o-transition: box-shadow 0.2s ease-out;
+}
+
+button:hover {
+    box-shadow: 0 5px 10px rgba(228, 54, 69, 0.25);
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-out;
+    -moz-transition: box-shadow 0.2s ease-out;
+    -o-transition: box-shadow 0.2s ease-out;
+    cursor: pointer;
 }
 
 .clear-filters {
@@ -121,8 +137,12 @@ button {
 }
 
 .result img {
-    justify-self: flex-start;
     border-radius: 6px;
+    width: 140px;
+    height: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    object-fit: cover;
 }
 
 .info h2 {

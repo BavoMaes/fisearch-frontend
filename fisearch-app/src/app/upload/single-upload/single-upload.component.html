@@ -1,7 +1,54 @@
 <div class="container">
-<label>
-  PDF:
-  <input type="file" multiple (change)="getFiles($event)">
-  <button (click)="uploadFiles()">Upload</button>
-</label>
+  <div class="upload-container">
+    <div *ngIf="loading == false && loaded == false">
+      <form class="upload-form" (ngSubmit)="uploadFiles()">
+        <label>
+          PDF:
+          <input type="file" (change)="getFiles($event)">
+          <button type="submit">Upload</button>
+        </label>
+      </form>
+    </div>
+    <img *ngIf="loading == true" class="loading-animation" src="./assets/img/tail-spin.svg">
+    <div *ngIf="loaded">
+    <h1>Eindwerk toevoegen</h1>
+    <div class="preview">
+      <img src="{{ image }}">
+      <div class="details">
+        <form (ngSubmit)="submitWork()">
+        <p>Titel</p>
+        <input type="text" maxlength="255" name="title" [(ngModel)]="title"><br>
+        <p>Beschrijving</p>
+        <textarea rows="4" [(ngModel)]="description" name="description" maxlength="500"></textarea>
+        <p>Auteur</p>
+        <input type="text" name="author" [(ngModel)]="author">
+        <div class="row">
+          <div class="half-field">
+            <p>Departement</p>
+            <select [(ngModel)]="department" name="department">
+              <option value="">Alle departementen</option>
+              <option *ngFor="let department of departments" value="{{ department }}">{{ department }}</option>
+            </select>
+          </div>
+          <div class="half-field">
+            <p>Studierichting</p>
+            <input type="text" name="field" [(ngModel)]="field">
+          </div>
+        </div>
+        <div class="row">
+          <div class="half-field">
+            <p>Promotor</p>
+            <input type="text" name="promotor" [(ngModel)]="promotor">
+          </div>
+          <div class="half-field">
+            <p>Schooljaar</p>
+            <input type="number" name="year" [(ngModel)]="year">
+          </div>
+          <button type="submit">Eindwerk toevoegen</button>
+        </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>

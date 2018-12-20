@@ -29,7 +29,8 @@
     <h1 *ngIf="loaded == true && searched == ''">Zoekresultaten <span *ngIf="loaded == true && results.length != 0">({{ results.length }})</span></h1>
     <div *ngIf="loaded == true && results.length != 0">
       <div *ngFor="let result of results" class="result">
-        <img class="thumbnail" src="https://via.placeholder.com/141x200/e6e6e6/.jpg">
+        <img *ngIf="!result.finalworkURL" class="thumbnail" src="./assets/img/placeholder.jpg">
+        <img *ngIf="result.finalworkURL" class="thumbnail" src="{{ result.finalworkURL }}">
         <div class="info">
           <h2>{{ result.finalworkTitle }}</h2>
           <p class="author">{{ result.finalworkAuthor }}</p>

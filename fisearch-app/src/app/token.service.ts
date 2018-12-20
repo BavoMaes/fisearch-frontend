@@ -35,7 +35,6 @@ export class TokenService {
         this.router.navigate(['/login']);
       } else {
         this.login = true;
-        console.log('still got valid token');
       }
     }
   }

@@ -1,0 +1,123 @@
+.upload-container {
+    width: 100%;
+}
+
+.upload-form {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.preview {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.preview img {
+    width: 315px;
+    height: 450px;
+    border-radius: 6px;
+    margin-right: 15px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.preview input {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+}
+
+.preview textarea {
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+}
+
+.preview input::placeholder {
+    color: #c6c6c6;
+}
+
+.preview select {
+    background: transparent;
+    border: 1px solid #e6e6e6;
+    height: 40px;
+    width: 100%;
+    color: #222;
+    margin-bottom: 5px;
+    outline: none;
+    display: block;
+}
+
+.half-field {
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 10px 0 0;
+    float: left;
+}
+
+.preview p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.details {
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+button {
+    background-color: #e30f21;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(228, 54, 69, 0.15);
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-out;
+    -moz-transition: box-shadow 0.2s ease-out;
+    -o-transition: box-shadow 0.2s ease-out;
+    padding: 10px;
+}
+
+button:hover {
+    box-shadow: 0 5px 10px rgba(228, 54, 69, 0.25);
+    transition: box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-out;
+    -moz-transition: box-shadow 0.2s ease-out;
+    -o-transition: box-shadow 0.2s ease-out;
+    cursor: pointer;
+}
+
+h1 {
+    padding: 0;
+    margin: 25px 0;
+}
+
+.loading-animation {
+    display: block;
+    margin: 50px auto;
+}
